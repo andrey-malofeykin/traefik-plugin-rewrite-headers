@@ -125,7 +125,7 @@ func (r *responseWriter) Write(bytes []byte) (int, error) {
 func (r *responseWriter) WriteHeader(statusCode int) {
 	for _, rewrite := range r.rewrites {
 		headers := r.writer.Header().Values(rewrite.header)
-
+		fmt.Errorf("!!!!!!!!!!!! %v",rewrite.headerr)
 		if len(headers) == 0 {
 			continue
 		}
